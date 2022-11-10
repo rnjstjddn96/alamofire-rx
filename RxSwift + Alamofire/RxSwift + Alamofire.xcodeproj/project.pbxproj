@@ -15,6 +15,13 @@
 		09A156E6291CF12200332C1D /* RxSwift___AlamofireTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A156E5291CF12200332C1D /* RxSwift___AlamofireTests.swift */; };
 		09A156F0291CF12200332C1D /* RxSwift___AlamofireUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A156EF291CF12200332C1D /* RxSwift___AlamofireUITests.swift */; };
 		09A156F2291CF12200332C1D /* RxSwift___AlamofireUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A156F1291CF12200332C1D /* RxSwift___AlamofireUITestsLaunchTests.swift */; };
+		09A15700291CF4F400332C1D /* RequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A156FF291CF4F400332C1D /* RequestBuilder.swift */; };
+		09A15703291CF8B200332C1D /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 09A15702291CF8B200332C1D /* Alamofire */; };
+		09A15707291CF90600332C1D /* APIs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A15706291CF90600332C1D /* APIs.swift */; };
+		09A1570A291CFA3000332C1D /* NetworkConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A15709291CFA3000332C1D /* NetworkConfig.swift */; };
+		09A1570E291CFBAD00332C1D /* BaseInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A1570D291CFBAD00332C1D /* BaseInterceptor.swift */; };
+		09A15711291CFD0500332C1D /* NetworkLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A15710291CFD0500332C1D /* NetworkLogger.swift */; };
+		09A15713291CFD1E00332C1D /* Queues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A15712291CFD1E00332C1D /* Queues.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +54,13 @@
 		09A156EB291CF12200332C1D /* RxSwift + AlamofireUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "RxSwift + AlamofireUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		09A156EF291CF12200332C1D /* RxSwift___AlamofireUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RxSwift___AlamofireUITests.swift"; sourceTree = "<group>"; };
 		09A156F1291CF12200332C1D /* RxSwift___AlamofireUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RxSwift___AlamofireUITestsLaunchTests.swift"; sourceTree = "<group>"; };
+		09A156FF291CF4F400332C1D /* RequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestBuilder.swift; sourceTree = "<group>"; };
+		09A15706291CF90600332C1D /* APIs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIs.swift; sourceTree = "<group>"; };
+		09A15708291CF9E000332C1D /* develop.config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = develop.config.xcconfig; sourceTree = "<group>"; };
+		09A15709291CFA3000332C1D /* NetworkConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConfig.swift; sourceTree = "<group>"; };
+		09A1570D291CFBAD00332C1D /* BaseInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseInterceptor.swift; sourceTree = "<group>"; };
+		09A15710291CFD0500332C1D /* NetworkLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLogger.swift; sourceTree = "<group>"; };
+		09A15712291CFD1E00332C1D /* Queues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Queues.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09A15703291CF8B200332C1D /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,12 +112,15 @@
 		09A156CD291CF12000332C1D /* RxSwift + Alamofire */ = {
 			isa = PBXGroup;
 			children = (
+				09A15708291CF9E000332C1D /* develop.config.xcconfig */,
+				09A156FE291CF4EA00332C1D /* Network */,
 				09A156CE291CF12000332C1D /* AppDelegate.swift */,
 				09A156D0291CF12000332C1D /* SceneDelegate.swift */,
 				09A156D2291CF12000332C1D /* ViewController.swift */,
 				09A156D7291CF12200332C1D /* Assets.xcassets */,
 				09A156D9291CF12200332C1D /* LaunchScreen.storyboard */,
 				09A156DC291CF12200332C1D /* Info.plist */,
+				09A15712291CFD1E00332C1D /* Queues.swift */,
 			);
 			path = "RxSwift + Alamofire";
 			sourceTree = "<group>";
@@ -124,6 +142,50 @@
 			path = "RxSwift + AlamofireUITests";
 			sourceTree = "<group>";
 		};
+		09A156FE291CF4EA00332C1D /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				09A1570F291CFCFE00332C1D /* Logger */,
+				09A1570C291CFBA600332C1D /* Interceptor */,
+				09A1570B291CFB7200332C1D /* Config */,
+				09A15705291CF8F900332C1D /* Request */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		09A15705291CF8F900332C1D /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				09A156FF291CF4F400332C1D /* RequestBuilder.swift */,
+				09A15706291CF90600332C1D /* APIs.swift */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		09A1570B291CFB7200332C1D /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				09A15709291CFA3000332C1D /* NetworkConfig.swift */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		09A1570C291CFBA600332C1D /* Interceptor */ = {
+			isa = PBXGroup;
+			children = (
+				09A1570D291CFBAD00332C1D /* BaseInterceptor.swift */,
+			);
+			path = Interceptor;
+			sourceTree = "<group>";
+		};
+		09A1570F291CFCFE00332C1D /* Logger */ = {
+			isa = PBXGroup;
+			children = (
+				09A15710291CFD0500332C1D /* NetworkLogger.swift */,
+			);
+			path = Logger;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -140,6 +202,9 @@
 			dependencies = (
 			);
 			name = "RxSwift + Alamofire";
+			packageProductDependencies = (
+				09A15702291CF8B200332C1D /* Alamofire */,
+			);
 			productName = "RxSwift + Alamofire";
 			productReference = 09A156CB291CF12000332C1D /* RxSwift + Alamofire.app */;
 			productType = "com.apple.product-type.application";
@@ -212,6 +277,10 @@
 				Base,
 			);
 			mainGroup = 09A156C2291CF12000332C1D;
+			packageReferences = (
+				09A15701291CF8B200332C1D /* XCRemoteSwiftPackageReference "Alamofire" */,
+				09A15704291CF8D700332C1D /* XCRemoteSwiftPackageReference "RxSwift" */,
+			);
 			productRefGroup = 09A156CC291CF12000332C1D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -254,9 +323,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09A15711291CFD0500332C1D /* NetworkLogger.swift in Sources */,
+				09A15713291CFD1E00332C1D /* Queues.swift in Sources */,
 				09A156D3291CF12000332C1D /* ViewController.swift in Sources */,
 				09A156CF291CF12000332C1D /* AppDelegate.swift in Sources */,
+				09A1570A291CFA3000332C1D /* NetworkConfig.swift in Sources */,
 				09A156D1291CF12000332C1D /* SceneDelegate.swift in Sources */,
+				09A15707291CF90600332C1D /* APIs.swift in Sources */,
+				09A15700291CF4F400332C1D /* RequestBuilder.swift in Sources */,
+				09A1570E291CFBAD00332C1D /* BaseInterceptor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -590,6 +665,33 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		09A15701291CF8B200332C1D /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		09A15704291CF8D700332C1D /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		09A15702291CF8B200332C1D /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 09A15701291CF8B200332C1D /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 09A156C3291CF12000332C1D /* Project object */;
 }
