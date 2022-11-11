@@ -6,3 +6,7 @@
 //
 
 import Foundation
+
+struct Queues {
+    static let loggerQueue = DispatchQueue(label: "loggerQueue")
+}

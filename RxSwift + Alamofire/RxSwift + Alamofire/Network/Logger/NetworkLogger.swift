@@ -14,22 +14,22 @@ class NetworkLogger: EventMonitor {
     }
     
     func request(_ request: Request, didCreateTask task: URLSessionTask) {
-        var authorization = String.empty
+        var authorization = ""
         if let request = request.request,
-           let accessToken = request.headers[Constants.APIMeta.AUTHORIZATION] {
+           let accessToken = request.headers["Authorization"] {
             authorization = accessToken
         } else {
             authorization = "No Token"
         }
         
-        log.info("""
+        print("""
         \n⚪️
         🙎‍♂️ Authorization: \(authorization)
         
         - URL: \(request.request?.url?.absoluteString ?? ""))
         - Method: \(String(describing: request.request?.httpMethod))
         - Header:\n\(request.request?.allHTTPHeaderFields ?? [:])
-        - Parameter:\n\(JSON(request.request?.httpBody as Any))
+        - Parameter:\n\(String(describing: request.request?.httpBody?.toPrettyPrinted)))
         """)
     }
     
@@ -39,22 +39,22 @@ class NetworkLogger: EventMonitor {
                  withResult result: Request.ValidationResult) {
         switch result {
         case .success:
-            log.info("""
+            print("""
             \n🟢
             - URL: \(String(describing: request.request?.url?.absoluteString))
             - Method: \(String(describing: request.request?.httpMethod))
             - StatusCode: \(response.statusCode)
-            - Data:\n\(JSON(data as Any))
+            - Data:\n\(String(describing: data?.toPrettyPrinted)))
             
             """
             )
         case .failure(let error):
-            log.info("""
+            print("""
             \n🔴
             - URL: \(String(describing: request.request?.url?.absoluteString))
             - StatusCode:\(response.statusCode)
             - Error: \(error.localizedDescription)
-            - Data:\n\(JSON(data as Any))
+            - Data:\n\(String(describing: data?.toPrettyPrinted))
             
             """
             )

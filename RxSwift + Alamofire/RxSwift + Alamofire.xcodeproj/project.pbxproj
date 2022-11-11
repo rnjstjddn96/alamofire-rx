@@ -22,6 +22,8 @@
 		09A1570E291CFBAD00332C1D /* BaseInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A1570D291CFBAD00332C1D /* BaseInterceptor.swift */; };
 		09A15711291CFD0500332C1D /* NetworkLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A15710291CFD0500332C1D /* NetworkLogger.swift */; };
 		09A15713291CFD1E00332C1D /* Queues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A15712291CFD1E00332C1D /* Queues.swift */; };
+		09B23276291E7C9400979EB0 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B23275291E7C9400979EB0 /* SessionManager.swift */; };
+		09B23278291E7CAB00979EB0 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B23277291E7CAB00979EB0 /* NetworkService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +63,8 @@
 		09A1570D291CFBAD00332C1D /* BaseInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseInterceptor.swift; sourceTree = "<group>"; };
 		09A15710291CFD0500332C1D /* NetworkLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLogger.swift; sourceTree = "<group>"; };
 		09A15712291CFD1E00332C1D /* Queues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Queues.swift; sourceTree = "<group>"; };
+		09B23275291E7C9400979EB0 /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
+		09B23277291E7CAB00979EB0 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +100,7 @@
 				09A156E4291CF12200332C1D /* RxSwift + AlamofireTests */,
 				09A156EE291CF12200332C1D /* RxSwift + AlamofireUITests */,
 				09A156CC291CF12000332C1D /* Products */,
+				09B23279291E7D1100979EB0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -114,13 +119,13 @@
 			children = (
 				09A15708291CF9E000332C1D /* develop.config.xcconfig */,
 				09A156FE291CF4EA00332C1D /* Network */,
+				09A15712291CFD1E00332C1D /* Queues.swift */,
 				09A156CE291CF12000332C1D /* AppDelegate.swift */,
 				09A156D0291CF12000332C1D /* SceneDelegate.swift */,
 				09A156D2291CF12000332C1D /* ViewController.swift */,
 				09A156D7291CF12200332C1D /* Assets.xcassets */,
 				09A156D9291CF12200332C1D /* LaunchScreen.storyboard */,
 				09A156DC291CF12200332C1D /* Info.plist */,
-				09A15712291CFD1E00332C1D /* Queues.swift */,
 			);
 			path = "RxSwift + Alamofire";
 			sourceTree = "<group>";
@@ -145,10 +150,12 @@
 		09A156FE291CF4EA00332C1D /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				09B23274291E7C8800979EB0 /* Session */,
 				09A1570F291CFCFE00332C1D /* Logger */,
 				09A1570C291CFBA600332C1D /* Interceptor */,
 				09A1570B291CFB7200332C1D /* Config */,
 				09A15705291CF8F900332C1D /* Request */,
+				09B23277291E7CAB00979EB0 /* NetworkService.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -184,6 +191,21 @@
 				09A15710291CFD0500332C1D /* NetworkLogger.swift */,
 			);
 			path = Logger;
+			sourceTree = "<group>";
+		};
+		09B23274291E7C8800979EB0 /* Session */ = {
+			isa = PBXGroup;
+			children = (
+				09B23275291E7C9400979EB0 /* SessionManager.swift */,
+			);
+			path = Session;
+			sourceTree = "<group>";
+		};
+		09B23279291E7D1100979EB0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -323,6 +345,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09B23278291E7CAB00979EB0 /* NetworkService.swift in Sources */,
 				09A15711291CFD0500332C1D /* NetworkLogger.swift in Sources */,
 				09A15713291CFD1E00332C1D /* Queues.swift in Sources */,
 				09A156D3291CF12000332C1D /* ViewController.swift in Sources */,
@@ -331,6 +354,7 @@
 				09A156D1291CF12000332C1D /* SceneDelegate.swift in Sources */,
 				09A15707291CF90600332C1D /* APIs.swift in Sources */,
 				09A15700291CF4F400332C1D /* RequestBuilder.swift in Sources */,
+				09B23276291E7C9400979EB0 /* SessionManager.swift in Sources */,
 				09A1570E291CFBAD00332C1D /* BaseInterceptor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
