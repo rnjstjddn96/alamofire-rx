@@ -10,6 +10,7 @@ import Alamofire
 
 enum APIs {
     case TODOS
+    case PHOTOS
 }
 
 extension APIs: RequestBuilder {
@@ -24,14 +25,18 @@ extension APIs: RequestBuilder {
     
     var path: String {
         switch self {
-        case .TODOS:
+        case .PHOTOS:
             return "photos"
+        case .TODOS:
+            return "todos"
         }
     }
     
     var method: HTTPMethod {
         switch self {
         case .TODOS:
+            return .get
+        case .PHOTOS:
             return .get
         }
     }

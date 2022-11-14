@@ -9,11 +9,13 @@ import UIKit
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
-
-
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    func application(
+        _ application: UIApplication,
+        didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
+    ) -> Bool {
         // Override point for customization after application launch.
+        configureNetworkConfig()
+        
         return true
     }
 
@@ -32,7 +34,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     private func configureNetworkConfig() {
-//        let infoDictionary = Bundle.main.infoDictionary
+        let infoDictionary = Bundle.main.infoDictionary!
+        NetworkConfig.HOST_URL = infoDictionary["ROOT_URL"] as? String
     }
 
 }

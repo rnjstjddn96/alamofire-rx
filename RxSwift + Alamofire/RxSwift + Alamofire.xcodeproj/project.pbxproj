@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0996FBC42922293400187708 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 0996FBC32922293400187708 /* RxSwift */; };
+		0996FBC72922297300187708 /* APIResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0996FBC62922297300187708 /* APIResult.swift */; };
+		0996FBC9292229ED00187708 /* Code.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0996FBC8292229ED00187708 /* Code.swift */; };
+		0996FBCB29222A5400187708 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0996FBCA29222A5400187708 /* APIError.swift */; };
+		0996FBCE292230FF00187708 /* Photos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0996FBCD292230FF00187708 /* Photos.swift */; };
+		0996FBD12922318F00187708 /* PhotoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0996FBD02922318F00187708 /* PhotoService.swift */; };
+		0996FBD32922325300187708 /* TodoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0996FBD22922325300187708 /* TodoService.swift */; };
+		0996FBD52922326900187708 /* Todos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0996FBD42922326900187708 /* Todos.swift */; };
+		0996FBD7292232B300187708 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0996FBD6292232B300187708 /* ViewModel.swift */; };
 		09A156CF291CF12000332C1D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A156CE291CF12000332C1D /* AppDelegate.swift */; };
 		09A156D1291CF12000332C1D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A156D0291CF12000332C1D /* SceneDelegate.swift */; };
 		09A156D3291CF12000332C1D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A156D2291CF12000332C1D /* ViewController.swift */; };
@@ -44,6 +53,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0996FBC62922297300187708 /* APIResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResult.swift; sourceTree = "<group>"; };
+		0996FBC8292229ED00187708 /* Code.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Code.swift; sourceTree = "<group>"; };
+		0996FBCA29222A5400187708 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		0996FBCD292230FF00187708 /* Photos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photos.swift; sourceTree = "<group>"; };
+		0996FBD02922318F00187708 /* PhotoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoService.swift; sourceTree = "<group>"; };
+		0996FBD22922325300187708 /* TodoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoService.swift; sourceTree = "<group>"; };
+		0996FBD42922326900187708 /* Todos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todos.swift; sourceTree = "<group>"; };
+		0996FBD6292232B300187708 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		09A156CB291CF12000332C1D /* RxSwift + Alamofire.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RxSwift + Alamofire.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		09A156CE291CF12000332C1D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		09A156D0291CF12000332C1D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -72,6 +89,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0996FBC42922293400187708 /* RxSwift in Frameworks */,
 				09A15703291CF8B200332C1D /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -93,6 +111,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0996FBCC292230F800187708 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0996FBCD292230FF00187708 /* Photos.swift */,
+				0996FBD42922326900187708 /* Todos.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0996FBCF2922318600187708 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				0996FBD02922318F00187708 /* PhotoService.swift */,
+				0996FBD22922325300187708 /* TodoService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 		09A156C2291CF12000332C1D = {
 			isa = PBXGroup;
 			children = (
@@ -118,11 +154,14 @@
 			isa = PBXGroup;
 			children = (
 				09A15708291CF9E000332C1D /* develop.config.xcconfig */,
+				0996FBCF2922318600187708 /* Service */,
+				0996FBCC292230F800187708 /* Model */,
 				09A156FE291CF4EA00332C1D /* Network */,
 				09A15712291CFD1E00332C1D /* Queues.swift */,
 				09A156CE291CF12000332C1D /* AppDelegate.swift */,
 				09A156D0291CF12000332C1D /* SceneDelegate.swift */,
 				09A156D2291CF12000332C1D /* ViewController.swift */,
+				0996FBD6292232B300187708 /* ViewModel.swift */,
 				09A156D7291CF12200332C1D /* Assets.xcassets */,
 				09A156D9291CF12200332C1D /* LaunchScreen.storyboard */,
 				09A156DC291CF12200332C1D /* Info.plist */,
@@ -173,6 +212,9 @@
 			isa = PBXGroup;
 			children = (
 				09A15709291CFA3000332C1D /* NetworkConfig.swift */,
+				0996FBC62922297300187708 /* APIResult.swift */,
+				0996FBCA29222A5400187708 /* APIError.swift */,
+				0996FBC8292229ED00187708 /* Code.swift */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -226,6 +268,7 @@
 			name = "RxSwift + Alamofire";
 			packageProductDependencies = (
 				09A15702291CF8B200332C1D /* Alamofire */,
+				0996FBC32922293400187708 /* RxSwift */,
 			);
 			productName = "RxSwift + Alamofire";
 			productReference = 09A156CB291CF12000332C1D /* RxSwift + Alamofire.app */;
@@ -348,14 +391,22 @@
 				09B23278291E7CAB00979EB0 /* NetworkService.swift in Sources */,
 				09A15711291CFD0500332C1D /* NetworkLogger.swift in Sources */,
 				09A15713291CFD1E00332C1D /* Queues.swift in Sources */,
+				0996FBCE292230FF00187708 /* Photos.swift in Sources */,
+				0996FBC72922297300187708 /* APIResult.swift in Sources */,
 				09A156D3291CF12000332C1D /* ViewController.swift in Sources */,
 				09A156CF291CF12000332C1D /* AppDelegate.swift in Sources */,
 				09A1570A291CFA3000332C1D /* NetworkConfig.swift in Sources */,
+				0996FBD12922318F00187708 /* PhotoService.swift in Sources */,
 				09A156D1291CF12000332C1D /* SceneDelegate.swift in Sources */,
 				09A15707291CF90600332C1D /* APIs.swift in Sources */,
+				0996FBD7292232B300187708 /* ViewModel.swift in Sources */,
+				0996FBC9292229ED00187708 /* Code.swift in Sources */,
 				09A15700291CF4F400332C1D /* RequestBuilder.swift in Sources */,
 				09B23276291E7C9400979EB0 /* SessionManager.swift in Sources */,
 				09A1570E291CFBAD00332C1D /* BaseInterceptor.swift in Sources */,
+				0996FBD32922325300187708 /* TodoService.swift in Sources */,
+				0996FBCB29222A5400187708 /* APIError.swift in Sources */,
+				0996FBD52922326900187708 /* Todos.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -405,6 +456,7 @@
 /* Begin XCBuildConfiguration section */
 		09A156F3291CF12200332C1D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 09A15708291CF9E000332C1D /* develop.config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -519,6 +571,7 @@
 		};
 		09A156F6291CF12200332C1D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 09A15708291CF9E000332C1D /* develop.config.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -579,6 +632,7 @@
 		};
 		09A156F9291CF12200332C1D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 09A15708291CF9E000332C1D /* develop.config.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -617,6 +671,7 @@
 		};
 		09A156FC291CF12200332C1D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 09A15708291CF9E000332C1D /* develop.config.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -710,6 +765,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		0996FBC32922293400187708 /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 09A15704291CF8D700332C1D /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
 		09A15702291CF8B200332C1D /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 09A15701291CF8B200332C1D /* XCRemoteSwiftPackageReference "Alamofire" */;
