@@ -10,13 +10,13 @@ import RxSwift
 
 protocol TodoServiceInterface {
     var service: NetworkService { get }
-    func getTodoLists() -> Observable<TodoListDto>
+    func getTodoLists() -> Observable<[TodoListDto]>
 }
 
 class TodoService: TodoServiceInterface {
     var service = NetworkService()
     
-    func getTodoLists() -> Observable<TodoListDto> {
+    func getTodoLists() -> Observable<[TodoListDto]> {
         return service.requestPlain(APIs.TODOS)
     }
 }

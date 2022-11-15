@@ -15,7 +15,7 @@
 		0996FBD12922318F00187708 /* PhotoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0996FBD02922318F00187708 /* PhotoService.swift */; };
 		0996FBD32922325300187708 /* TodoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0996FBD22922325300187708 /* TodoService.swift */; };
 		0996FBD52922326900187708 /* Todos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0996FBD42922326900187708 /* Todos.swift */; };
-		0996FBD7292232B300187708 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0996FBD6292232B300187708 /* ViewModel.swift */; };
+		0996FBD7292232B300187708 /* TodoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0996FBD6292232B300187708 /* TodoViewModel.swift */; };
 		09A156CF291CF12000332C1D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A156CE291CF12000332C1D /* AppDelegate.swift */; };
 		09A156D1291CF12000332C1D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A156D0291CF12000332C1D /* SceneDelegate.swift */; };
 		09A156D3291CF12000332C1D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A156D2291CF12000332C1D /* ViewController.swift */; };
@@ -33,6 +33,9 @@
 		09A15713291CFD1E00332C1D /* Queues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A15712291CFD1E00332C1D /* Queues.swift */; };
 		09B23276291E7C9400979EB0 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B23275291E7C9400979EB0 /* SessionManager.swift */; };
 		09B23278291E7CAB00979EB0 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B23277291E7CAB00979EB0 /* NetworkService.swift */; };
+		09D29448292343AC00A75B74 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 09D29447292343AC00A75B74 /* SnapKit */; };
+		09D2944A292344F700A75B74 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 09D29449292344F700A75B74 /* RxCocoa */; };
+		09D2944C2923456B00A75B74 /* TodoListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D2944B2923456B00A75B74 /* TodoListCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,7 +63,7 @@
 		0996FBD02922318F00187708 /* PhotoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoService.swift; sourceTree = "<group>"; };
 		0996FBD22922325300187708 /* TodoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoService.swift; sourceTree = "<group>"; };
 		0996FBD42922326900187708 /* Todos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todos.swift; sourceTree = "<group>"; };
-		0996FBD6292232B300187708 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		0996FBD6292232B300187708 /* TodoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoViewModel.swift; sourceTree = "<group>"; };
 		09A156CB291CF12000332C1D /* RxSwift + Alamofire.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RxSwift + Alamofire.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		09A156CE291CF12000332C1D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		09A156D0291CF12000332C1D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -82,6 +85,7 @@
 		09A15712291CFD1E00332C1D /* Queues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Queues.swift; sourceTree = "<group>"; };
 		09B23275291E7C9400979EB0 /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
 		09B23277291E7CAB00979EB0 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		09D2944B2923456B00A75B74 /* TodoListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,7 +93,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09D29448292343AC00A75B74 /* SnapKit in Frameworks */,
 				0996FBC42922293400187708 /* RxSwift in Frameworks */,
+				09D2944A292344F700A75B74 /* RxCocoa in Frameworks */,
 				09A15703291CF8B200332C1D /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -161,7 +167,8 @@
 				09A156CE291CF12000332C1D /* AppDelegate.swift */,
 				09A156D0291CF12000332C1D /* SceneDelegate.swift */,
 				09A156D2291CF12000332C1D /* ViewController.swift */,
-				0996FBD6292232B300187708 /* ViewModel.swift */,
+				0996FBD6292232B300187708 /* TodoViewModel.swift */,
+				09D2944B2923456B00A75B74 /* TodoListCell.swift */,
 				09A156D7291CF12200332C1D /* Assets.xcassets */,
 				09A156D9291CF12200332C1D /* LaunchScreen.storyboard */,
 				09A156DC291CF12200332C1D /* Info.plist */,
@@ -269,6 +276,8 @@
 			packageProductDependencies = (
 				09A15702291CF8B200332C1D /* Alamofire */,
 				0996FBC32922293400187708 /* RxSwift */,
+				09D29447292343AC00A75B74 /* SnapKit */,
+				09D29449292344F700A75B74 /* RxCocoa */,
 			);
 			productName = "RxSwift + Alamofire";
 			productReference = 09A156CB291CF12000332C1D /* RxSwift + Alamofire.app */;
@@ -345,6 +354,7 @@
 			packageReferences = (
 				09A15701291CF8B200332C1D /* XCRemoteSwiftPackageReference "Alamofire" */,
 				09A15704291CF8D700332C1D /* XCRemoteSwiftPackageReference "RxSwift" */,
+				09D29446292343AC00A75B74 /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = 09A156CC291CF12000332C1D /* Products */;
 			projectDirPath = "";
@@ -391,6 +401,7 @@
 				09B23278291E7CAB00979EB0 /* NetworkService.swift in Sources */,
 				09A15711291CFD0500332C1D /* NetworkLogger.swift in Sources */,
 				09A15713291CFD1E00332C1D /* Queues.swift in Sources */,
+				09D2944C2923456B00A75B74 /* TodoListCell.swift in Sources */,
 				0996FBCE292230FF00187708 /* Photos.swift in Sources */,
 				0996FBC72922297300187708 /* APIResult.swift in Sources */,
 				09A156D3291CF12000332C1D /* ViewController.swift in Sources */,
@@ -399,7 +410,7 @@
 				0996FBD12922318F00187708 /* PhotoService.swift in Sources */,
 				09A156D1291CF12000332C1D /* SceneDelegate.swift in Sources */,
 				09A15707291CF90600332C1D /* APIs.swift in Sources */,
-				0996FBD7292232B300187708 /* ViewModel.swift in Sources */,
+				0996FBD7292232B300187708 /* TodoViewModel.swift in Sources */,
 				0996FBC9292229ED00187708 /* Code.swift in Sources */,
 				09A15700291CF4F400332C1D /* RequestBuilder.swift in Sources */,
 				09B23276291E7C9400979EB0 /* SessionManager.swift in Sources */,
@@ -762,6 +773,14 @@
 				minimumVersion = 6.0.0;
 			};
 		};
+		09D29446292343AC00A75B74 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -774,6 +793,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 09A15701291CF8B200332C1D /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		09D29447292343AC00A75B74 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 09D29446292343AC00A75B74 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		09D29449292344F700A75B74 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 09A15704291CF8D700332C1D /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

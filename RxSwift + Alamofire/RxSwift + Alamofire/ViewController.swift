@@ -7,14 +7,22 @@
 
 import UIKit
 import RxSwift
+import SnapKit
+import RxCocoa
 
 class ViewController: UIViewController {
-    var viewModel: ViewModel?
+    var todoListView: UITableView = {
+        let tableView = UITableView()
+        tableView.register(TodoListCell.self, forCellReuseIdentifier: TodoListCell.id)
+        return tableView
+    }()
+    
+    var todoViewModel: TodoViewModelInterface
     var disposeBag = DisposeBag()
     
-    init(viewModel: ViewModel) {
+    init(todoViewModel: TodoViewModelInterface) {
+        self.todoViewModel = todoViewModel
         super.init(nibName: nil, bundle: nil)
-        self.viewModel = viewModel
     }
     
     required init?(coder: NSCoder) {
@@ -24,26 +32,46 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        self.bind()
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
         configure()
-        getTodos()
+        todoViewModel.getTodos()
     }
 }
 
 extension ViewController {
     private func configure() {
         self.view.backgroundColor = .systemBackground
-    }
-    
-    private func getTodos() {
-        let service = TodoService()
-        service
-            .getTodoLists()
-            .subscribe(onNext: { todos in
-                print("todos from remote: \(todos)")
-            },onError: { error in
-                print(error.localizedDescription)
-            })
-            .disposed(by: self.disposeBag)
+        
+        self.view.addSubview(todoListView)
+        self.todoListView.snp.makeConstraints { [weak self] create in
+            guard let self = self else { return }
+            create.edges.equalTo(self.view.safeAreaLayoutGuide)
+        }
     }
 }
 
+extension ViewController {
+    private func bind() {
+        self.todoViewModel
+            .todoSubject
+            .asObservable()
+            .bind(to: self.todoListView.rx.items) { tableView, index, item -> UITableViewCell in
+                guard let cell = tableView.dequeueReusableCell(
+                    withIdentifier: TodoListCell.id
+                ) as? TodoListCell else {
+                    return UITableViewCell()
+                }
+                cell.lblTodoTitle.text = item.title
+                cell.lblCompletion.text = item.completed ? "✔" : " "
+                return cell
+            }
+            .disposed(by: disposeBag)
+    
+    }
+}
